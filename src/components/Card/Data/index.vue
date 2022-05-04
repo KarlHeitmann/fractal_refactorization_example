@@ -1,4 +1,6 @@
 <script setup>
+  import Type from './Type.vue'
+
   const props = defineProps({
     pokemon: {
       type: Object,
@@ -17,11 +19,10 @@
     <p class="card-text">
       <h4>Types</h4>
       <ol>
-        <li
+        <Type
           v-for="t in pokemon.types"
-        >
-          {{ t.type.name }}
-        </li>
+          :type="t"
+        />
       </ol>
       <h4>Abilities</h4>
       <ol>
