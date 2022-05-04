@@ -1,7 +1,7 @@
 <script setup>
   import { reactive, ref } from 'vue';
   import NoData from './NoData.vue'
-  import Data from './Data.vue'
+  import Data from './Data/index.vue'
   // const pokemon = {name: "placeholder", url: "#"}
   const cardData = reactive({})
   const props = defineProps({
