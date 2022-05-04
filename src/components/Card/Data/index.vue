@@ -1,5 +1,6 @@
 <script setup>
   import Type from './Type.vue'
+  import Ability from './Ability.vue'
 
   const props = defineProps({
     pokemon: {
@@ -26,11 +27,10 @@
       </ol>
       <h4>Abilities</h4>
       <ol>
-        <li
-          v-for="a in pokemon.abilities"
-        >
-          {{ a.ability.name }}
-        </li>
+        <Ability
+          v-for="ability in pokemon.abilities"
+          :ability="ability"
+        />
       </ol>
     </p>
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
