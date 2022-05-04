@@ -1,6 +1,6 @@
 <script setup>
-  import axios from 'axios'
   import { reactive, ref } from 'vue';
+  import NoData from './NoData.vue'
   // const pokemon = {name: "placeholder", url: "#"}
   const cardData = reactive({})
   const props = defineProps({
@@ -11,25 +11,11 @@
   })
   const hasData = ref(false)
   const { pokemon } = props
-  const fetchPokemon = (url) => {
-    console.log("fetchPokemon", url)
-    const config = {
-      method: 'get',
-      url,
-      headers: { }
-    };
 
-    axios(config)
-    .then(function (response) {
-      const { data } = response
-      hasData.value = true
-      console.log(data)
-      cardData.pokemon = data
-      console.log(cardData)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  const callback = (pokemon) => {
+    console.log("callback", pokemon)
+    hasData.value = true
+    cardData.pokemon = pokemon
   }
 </script>
 <template>
@@ -62,16 +48,11 @@
       </p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
     </div>
-    <div
-      class="card-body"
+    <NoData
       v-else
-    >
-      <button
-        class="btn btn-primary"
-        @click="fetchPokemon(pokemon.url)"
-      >
-        {{ pokemon.name }}
-      </button>
-    </div>
+      @has-data="callback"
+      :url="props.pokemon.url"
+      :name="props.pokemon.name"
+    />
   </div>
 </template>
