@@ -3,7 +3,7 @@
   import axios from 'axios'
 
   import Navbar from "@/components/Navbar.vue";
-  import Card from "@/components/Card.vue";
+  import Card from "@/components/Card/index.vue";
 
   const pokemons = ref([])
   const fetchAllPokemons = () => {
