@@ -37,7 +37,7 @@
     </button>
     <div class="row">
       <div
-        class="col-3"
+        class="col-4"
         v-for="pokemon in pokemons"
         :key="pokemon.url"
       >
