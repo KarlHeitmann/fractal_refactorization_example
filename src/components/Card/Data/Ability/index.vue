@@ -1,9 +1,11 @@
 <script setup>
-  import {ref} from 'vue'
+  import {ref, reactive} from 'vue'
 
   import StateOff from './StateOff.vue'
+  import AbilityData from './AbilityData.vue'
 
   const stateOn = ref(false)
+  const abilityData = reactive({})
 
   const props = defineProps({
     ability: {
@@ -13,15 +15,20 @@
   })
 
   const {ability} = props
+
+  const fetchSuccess = (ability) => {
+    stateOn.value = true
+    abilityData.ability = ability
+  }
 </script>
 <template>
-  <div
+  <AbilityData
     v-if="stateOn"
-  >
-    TODO
-  </div>
+    :ability="abilityData.ability"
+  />
   <StateOff
     v-else
+    @abilities-incoming="fetchSuccess"
     :url="ability.ability.url"
     :name="ability.ability.name"
   />

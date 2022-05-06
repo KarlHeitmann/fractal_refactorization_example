@@ -11,6 +11,9 @@
       required: true,
     },
   })
+
+  const emit = defineEmits(['abilitiesIncoming'])
+
   const fetchAbility = (url) => {
     console.log("fetchPokemon", url)
     const config = {
@@ -23,6 +26,7 @@
     .then(function (response) {
       const { data } = response
       console.log(data)
+      emit('abilitiesIncoming', data)
       // emit('hasData', data)
     })
     .catch(function (error) {
