@@ -1,5 +1,5 @@
 <script setup>
-  import Type from './Type.vue'
+  import Type from './Type/index.vue'
   import Ability from './Ability/index.vue'
 
   const props = defineProps({
