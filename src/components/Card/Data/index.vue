@@ -1,6 +1,6 @@
 <script setup>
   import Type from './Type.vue'
-  import Ability from './Ability.vue'
+  import Ability from './Ability/index.vue'
 
   const props = defineProps({
     pokemon: {

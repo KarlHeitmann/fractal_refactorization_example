@@ -1,13 +1,16 @@
 <script setup>
   import axios from 'axios'
-
+  
   const props = defineProps({
-    ability: {
+    url: {
+      type: Object,
+      required: true,
+    },
+    name: {
       type: Object,
       required: true,
     },
   })
-
   const fetchAbility = (url) => {
     console.log("fetchPokemon", url)
     const config = {
@@ -26,12 +29,13 @@
       console.log(error);
     });
   }
-  const {ability} = props
+
+const {url, name} = props
 </script>
 <template>
   <li
-    @click="fetchAbility(ability.ability.url)"
+    @click="fetchAbility(url)"
   >
-    {{ ability.ability.name }}
+    {{ name }}
   </li>
 </template>
