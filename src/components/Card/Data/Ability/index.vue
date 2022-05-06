@@ -28,7 +28,7 @@
   />
   <StateOff
     v-else
-    @abilities-incoming="fetchSuccess"
+    @ability-incoming="fetchSuccess"
     :url="ability.ability.url"
     :name="ability.ability.name"
   />

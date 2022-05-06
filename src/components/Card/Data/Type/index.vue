@@ -1,5 +1,6 @@
 <script setup>
-  import axios from 'axios'
+  import { ref } from 'vue';
+  import StateOff from './StateOff.vue'
 
   const props = defineProps({
     type: {
@@ -8,30 +9,26 @@
     },
   })
 
-  const fetchType = (url) => {
-    console.log("fetchPokemon", url)
-    const config = {
-      method: 'get',
-      url,
-      headers: { }
-    };
+  const stateOn = ref(false)
 
-    axios(config)
-    .then(function (response) {
-      const { data } = response
-      console.log(data)
-      // emit('hasData', data)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  const fetchSuccess = (type) => {
+    console.log("ffffffffff")
+    stateOn.value = true
   }
 </script>
 <template>
-  <li
-    @click="fetchType(type.type.url)"
+  <div
+    v-if="stateOn"
   >
-    {{ type.type.name }}
-  </li>
+    TODO
+  </div>
+
+  <StateOff
+    v-else
+    @type-incoming="fetchSuccess"
+    :url="type.type.url"
+    :name="type.type.name"
+  />
+
 
 </template>

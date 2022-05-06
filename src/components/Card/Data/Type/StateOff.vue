@@ -1,20 +1,20 @@
 <script setup>
   import axios from 'axios'
-  
+
   const props = defineProps({
     url: {
-      type: Object,
+      type: String,
       required: true,
     },
     name: {
-      type: Object,
+      type: String,
       required: true,
     },
   })
 
-  const emit = defineEmits(['abilityIncoming'])
+  const emit = defineEmits(['TypeIncoming'])
 
-  const fetchAbility = (url) => {
+  const fetchType = (url) => {
     console.log("fetchPokemon", url)
     const config = {
       method: 'get',
@@ -26,19 +26,18 @@
     .then(function (response) {
       const { data } = response
       console.log(data)
-      emit('abilityIncoming', data)
-      // emit('hasData', data)
+      emit('typeIncoming', data)
     })
     .catch(function (error) {
       console.log(error);
     });
   }
-
-const {url, name} = props
+  const {url, name} = props
 </script>
+
 <template>
   <li
-    @click="fetchAbility(url)"
+    @click="fetchType(url)"
   >
     {{ name }}
   </li>
