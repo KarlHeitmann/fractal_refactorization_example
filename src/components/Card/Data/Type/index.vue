@@ -1,6 +1,7 @@
 <script setup>
-  import { ref } from 'vue';
+  import { reactive, ref } from 'vue';
   import StateOff from './StateOff.vue'
+  import Data from './Data.vue'
 
   const props = defineProps({
     type: {
@@ -10,18 +11,20 @@
   })
 
   const stateOn = ref(false)
+  const data = reactive({})
 
   const fetchSuccess = (type) => {
-    console.log("ffffffffff")
+    console.log("ffffffffff", type)
     stateOn.value = true
+    data.type = type
   }
 </script>
 <template>
-  <div
+  <Data
     v-if="stateOn"
-  >
-    TODO
-  </div>
+    :data="data"
+    :type="data.type"
+  />
 
   <StateOff
     v-else
