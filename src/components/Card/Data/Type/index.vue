@@ -29,8 +29,8 @@
   <StateOff
     v-else
     @type-incoming="fetchSuccess"
-    :url="type.type.url"
-    :name="type.type.name"
+    :url="type.url"
+    :name="type.name"
   />
 
 

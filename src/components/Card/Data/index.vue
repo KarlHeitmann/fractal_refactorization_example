@@ -9,6 +9,7 @@
     },
   })
   const {pokemon} = props
+  // debugger
 </script>
 <template>
   <div
@@ -22,7 +23,7 @@
       <ul>
         <Type
           v-for="t in pokemon.types"
-          :type="t"
+          :type="t.type"
         />
       </ul>
       <h4>Abilities</h4>
