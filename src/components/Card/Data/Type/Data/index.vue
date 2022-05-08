@@ -1,6 +1,7 @@
 <script setup>
   import {onMounted, ref} from 'vue'
   import DamageRelations from './DamageRelations.vue'
+  import Move from './Move.vue'
 
   const props = defineProps({
     type: {
@@ -12,7 +13,6 @@
   const {type} = props
 
   onMounted(() => {
-    console.log("sahdghdfsjkdsfhkds")
     console.log("type", type)
   })
 
@@ -24,5 +24,12 @@
     <DamageRelations
       :damage_relations="type.damage_relations"
     />
+    <ul>
+      <Move
+        v-for="move in type.moves"
+        :name="move.name"
+        :url="move.url"
+      />
+    </ul>
   </li>
 </template>

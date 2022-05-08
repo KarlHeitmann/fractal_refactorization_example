@@ -15,7 +15,6 @@
   const emit = defineEmits(['TypeIncoming'])
 
   const fetchType = (url) => {
-    console.log("fetchPokemon", url)
     const config = {
       method: 'get',
       url,

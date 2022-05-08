@@ -14,7 +14,6 @@
   const data = reactive({})
 
   const fetchSuccess = (type) => {
-    console.log("ffffffffff", type)
     stateOn.value = true
     data.type = type
   }

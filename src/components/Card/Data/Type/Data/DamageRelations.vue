@@ -9,7 +9,6 @@
   })
 
   const {damage_relations} = props
-  console.log("DamageRelations", props)
 </script>
 <template>
   <p>Damage Relations</p>
