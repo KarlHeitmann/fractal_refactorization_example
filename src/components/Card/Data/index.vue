@@ -19,12 +19,12 @@
     <h2 class="card-title">{{pokemon.name}}</h2>
     <p class="card-text">
       <h4>Types</h4>
-      <ol>
+      <ul>
         <Type
           v-for="t in pokemon.types"
           :type="t"
         />
-      </ol>
+      </ul>
       <h4>Abilities</h4>
       <ol>
         <Ability
