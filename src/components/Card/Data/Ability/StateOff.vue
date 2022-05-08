@@ -12,7 +12,7 @@
     },
   })
 
-  const emit = defineEmits(['abilitiesIncoming'])
+  const emit = defineEmits(['abilityIncoming'])
 
   const fetchAbility = (url) => {
     console.log("fetchPokemon", url)
@@ -26,7 +26,7 @@
     .then(function (response) {
       const { data } = response
       console.log(data)
-      emit('abilitiesIncoming', data)
+      emit('abilityIncoming', data)
       // emit('hasData', data)
     })
     .catch(function (error) {

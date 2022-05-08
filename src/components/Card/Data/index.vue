@@ -1,5 +1,5 @@
 <script setup>
-  import Type from './Type.vue'
+  import Type from './Type/index.vue'
   import Ability from './Ability/index.vue'
 
   const props = defineProps({
@@ -9,6 +9,7 @@
     },
   })
   const {pokemon} = props
+  // debugger
 </script>
 <template>
   <div
@@ -19,12 +20,12 @@
     <h2 class="card-title">{{pokemon.name}}</h2>
     <p class="card-text">
       <h4>Types</h4>
-      <ol>
+      <ul>
         <Type
           v-for="t in pokemon.types"
-          :type="t"
+          :type="t.type"
         />
-      </ol>
+      </ul>
       <h4>Abilities</h4>
       <ol>
         <Ability

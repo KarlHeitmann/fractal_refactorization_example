@@ -2,11 +2,17 @@
   import axios from 'axios'
 
   const props = defineProps({
-    type: {
-      type: Object,
+    url: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
       required: true,
     },
   })
+
+  const emit = defineEmits(['TypeIncoming'])
 
   const fetchType = (url) => {
     console.log("fetchPokemon", url)
@@ -20,18 +26,19 @@
     .then(function (response) {
       const { data } = response
       console.log(data)
-      // emit('hasData', data)
+      emit('typeIncoming', data)
     })
     .catch(function (error) {
       console.log(error);
     });
   }
+  const {url, name} = props
 </script>
+
 <template>
   <li
-    @click="fetchType(type.type.url)"
+    @click="fetchType(url)"
   >
-    {{ type.type.name }}
+    {{ name }}
   </li>
-
 </template>
