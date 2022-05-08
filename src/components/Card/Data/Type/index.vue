@@ -1,7 +1,7 @@
 <script setup>
   import { reactive, ref } from 'vue';
   import StateOff from './StateOff.vue'
-  import Data from './Data.vue'
+  import Data from './Data/index.vue'
 
   const props = defineProps({
     type: {

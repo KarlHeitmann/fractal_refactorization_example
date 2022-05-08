@@ -1,6 +1,6 @@
 <script setup>
   import {onMounted, ref} from 'vue'
-  import Type from './index.vue'
+  import Type from '../index.vue'
 
   const props = defineProps({
     type: {
