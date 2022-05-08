@@ -1,7 +1,7 @@
 <script setup>
   import { reactive, ref } from 'vue';
   import StateOff from './StateOff.vue'
-  import Data from './Data.vue'
+  import Data from './Data/index.vue'
 
   const props = defineProps({
     type: {
@@ -14,7 +14,6 @@
   const data = reactive({})
 
   const fetchSuccess = (type) => {
-    console.log("ffffffffff", type)
     stateOn.value = true
     data.type = type
   }

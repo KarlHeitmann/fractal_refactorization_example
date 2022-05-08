@@ -20,7 +20,6 @@
   const emit = defineEmits(['hasData'])
 
   const fetchPokemon = (url) => {
-    console.log("fetchPokemon", url)
     const config = {
       method: 'get',
       url,
@@ -31,7 +30,6 @@
     .then(function (response) {
       const { data } = response
       hasData.value = true
-      console.log(data)
       emit('hasData', data)
     })
     .catch(function (error) {

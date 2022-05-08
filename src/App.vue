@@ -7,7 +7,6 @@
 
   const pokemons = ref([])
   const fetchAllPokemons = () => {
-    console.log("fetchAllPokemons")
     const config = {
       method: 'get',
       url: 'https://pokeapi.co/api/v2/pokemon/',
