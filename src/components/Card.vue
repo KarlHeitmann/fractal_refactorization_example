@@ -1,6 +1,8 @@
 <script setup>
   import axios from 'axios'
   import { reactive, ref } from 'vue';
+  import Type from './Type.vue'
+
   // const pokemon = {name: "placeholder", url: "#"}
   const cardData = reactive({})
   const props = defineProps({
@@ -45,11 +47,10 @@
       <p class="card-text">
         <h4>Types</h4>
         <ol>
-          <li
+          <Type
             v-for="t in cardData.pokemon.types"
-          >
-            {{ t.type.name }}
-          </li>
+            :type="t"
+          />
         </ol>
         <h4>Abilities</h4>
         <ol>
