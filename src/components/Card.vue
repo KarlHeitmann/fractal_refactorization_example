@@ -2,6 +2,7 @@
   import axios from 'axios'
   import { reactive, ref } from 'vue';
   import Type from './Type.vue'
+  import Ability from './Ability.vue'
 
   // const pokemon = {name: "placeholder", url: "#"}
   const cardData = reactive({})
@@ -54,11 +55,10 @@
         </ol>
         <h4>Abilities</h4>
         <ol>
-          <li
-            v-for="a in cardData.pokemon.abilities"
-          >
-            {{ a.ability.name }}
-          </li>
+          <Ability
+            v-for="ability in cardData.pokemon.abilities"
+            :ability="ability"
+          />
         </ol>
       </p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
