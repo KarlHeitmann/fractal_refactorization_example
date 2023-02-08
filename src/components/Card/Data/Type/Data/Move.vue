@@ -14,7 +14,7 @@ import { onMounted } from 'vue';
   const {name, url} = props
 
   onMounted(() => {
-    console.log("Move props", props)
+    // console.log("Move props", props)
   })
 </script>
 

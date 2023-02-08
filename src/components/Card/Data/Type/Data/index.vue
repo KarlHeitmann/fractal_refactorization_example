@@ -1,6 +1,6 @@
 <script setup>
   import {onMounted, ref} from 'vue'
-  import DamageRelations from './DamageRelations.vue'
+  import DamageRelations from './DamageRelations/index.vue'
   import Move from './Move.vue'
 
   const props = defineProps({

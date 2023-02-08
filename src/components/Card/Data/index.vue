@@ -19,13 +19,6 @@
     >
     <h2 class="card-title">{{pokemon.name}}</h2>
     <p class="card-text">
-      <h4>Types</h4>
-      <ul>
-        <Type
-          v-for="t in pokemon.types"
-          :type="t.type"
-        />
-      </ul>
       <h4>Abilities</h4>
       <ol>
         <Ability
@@ -33,6 +26,13 @@
           :ability="ability"
         />
       </ol>
+      <h4>Types</h4>
+      <ul>
+        <Type
+          v-for="t in pokemon.types"
+          :type="t.type"
+        />
+      </ul>
     </p>
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>

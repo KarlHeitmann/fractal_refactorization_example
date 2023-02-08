@@ -1,5 +1,6 @@
 <script setup>
-  import Type from '../index.vue'
+  import Type from '../../index.vue'
+  import DoubleDamageFrom from './DoubleDamageFrom.vue'
 
   const props = defineProps({
     damage_relations: {
@@ -9,19 +10,15 @@
   })
 
   const {damage_relations} = props
+  const {double_damage_from} = damage_relations
+  console.log("parent double_damage_from: ", double_damage_from)
 </script>
 <template>
   <p>Damage Relations</p>
   <ul>
-    <li>
-      Double damage from
-      <ul>
-        <Type
-          v-for="type_nested in damage_relations.double_damage_from"
-          :type="type_nested"
-        />
-      </ul>
-    </li>
+    <DoubleDamageFrom
+      :double_damage_from="double_damage_from"
+    />
     <li>
       Double damage to
       <ul>
