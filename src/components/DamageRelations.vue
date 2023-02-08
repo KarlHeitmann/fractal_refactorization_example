@@ -1,4 +1,5 @@
 <script setup>
+  import Type from './Type.vue'
   const props = defineProps({
     type_data: {
       type: Object,
@@ -17,61 +18,55 @@
     <li>
       Double damage from
       <ul>
-        <li
+        <Type
           v-for="type_nested in t.damage_relations.double_damage_from"
-        >
-          {{type_nested.name}}
-        </li>
+          :type="{ type: type_nested }"
+        />
       </ul>
     </li>
     <li>
       Double damage to
       <ul>
-        <li
+        <Type
           v-for="type_nested in t.damage_relations.double_damage_to"
-        >
-          {{type_nested.name}}
-        </li>
+          :type="{ type: type_nested }"
+        />
       </ul>
     </li>
     <li>
       Half damage from
       <ul>
-        <li
+        <Type
           v-for="type_nested in t.damage_relations.half_damage_from"
-        >
-          {{type_nested.name}}
-        </li>
+          :type="{ type: type_nested }"
+        />
       </ul>
     </li>
     <li>
       Half damage to
       <ul>
-        <li
+        <Type
           v-for="type_nested in t.damage_relations.half_damage_to"
-        >
-          {{type_nested.name}}
-        </li>
+          :type="{ type: type_nested }"
+        />
       </ul>
     </li>
     <li>
       No damage from
       <ul>
-        <li
+        <Type
           v-for="type_nested in t.damage_relations.no_damage_from"
-        >
-          {{type_nested.name}}
-        </li>
+          :type="{ type: type_nested }"
+        />
       </ul>
     </li>
     <li>
       No damage to
       <ul>
-        <li
+        <Type
           v-for="type_nested in t.damage_relations.no_damage_to"
-        >
-          {{type_nested.name}}
-        </li>
+          :type="{ type: type_nested }"
+        />
       </ul>
     </li>
   </ul>
