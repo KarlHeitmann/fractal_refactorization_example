@@ -2,6 +2,7 @@
   import axios from 'axios'
   import { reactive, ref } from 'vue'
   import DamageRelations from './DamageRelations.vue'
+  import Move from './Move.vue'
 
   const stateOn = ref(false)
   const type_data = reactive({})
@@ -42,6 +43,13 @@
     <DamageRelations
       :type_data="type_data"
     />
+    <ul>
+      <Move
+        v-for="move in type_data.type.moves"
+        :name="move.name"
+        :url="move.url"
+      />
+    </ul>
   </li>
   <li
     v-else
